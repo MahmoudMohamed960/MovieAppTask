@@ -28,16 +28,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), MoviesAdapter.OnMovieItem
         viewModel.moviesListRes.observe(viewLifecycleOwner, Observer {
             showData(it)
         })
-        WorkManager.getInstance(requireContext())
-            .getWorkInfoByIdLiveData(viewModel.initWorkManger().id)
-            .observe(viewLifecycleOwner, Observer {
-                var result = it.outputData.getBoolean("Done", false)
-                if (result)
-                    Toast.makeText(requireContext(), "Done", Toast.LENGTH_LONG).show()
-                else
-                    Toast.makeText(requireContext(), "Failed", Toast.LENGTH_LONG).show()
-
-            })
     }
 
     private fun showData(response: Response<MutableMap<String, ArrayList<MoviesResult>>?>) {

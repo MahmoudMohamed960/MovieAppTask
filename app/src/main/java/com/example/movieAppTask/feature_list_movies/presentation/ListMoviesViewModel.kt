@@ -67,6 +67,7 @@ class ListMoviesViewModel @Inject constructor(
                     //setData To DB
                     moviesDBUseCases.insertMovie.invoke(MovieModel(moviesMap))
                     _moviesListRes.value = Response.success(moviesMap)
+                    initWorkManger()
                 } else
                     _moviesListRes.value = Response.emptyData()
             } else {
