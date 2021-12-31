@@ -12,7 +12,7 @@ data class Response<out T>(
         fun <T> error(message: String): Response<T> =
             Response(status = Status.ERROR,message = message)
 
-        fun <T> loading(data: T?): Response<T> =
+        fun <T> loading(): Response<T> =
             Response(status = Status.LOADING)
 
         fun <T> emptyData(): Response<T> =

@@ -6,7 +6,7 @@ import com.example.movieAppTask.util.Response
 import javax.inject.Inject
 
 class GetCategoriesUseCase @Inject constructor(private val listMoviesRepository: ListMoviesRepository) {
-    suspend operator fun invoke(): CategoriesResponse {
+    suspend operator fun invoke(): Response<CategoriesResponse> {
         return listMoviesRepository.getMoviesCategories()
     }
 }

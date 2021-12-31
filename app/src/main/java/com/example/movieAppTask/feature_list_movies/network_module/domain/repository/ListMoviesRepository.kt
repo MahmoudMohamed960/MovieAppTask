@@ -5,6 +5,6 @@ import com.example.movieAppTask.feature_list_movies.network_module.data.model.Mo
 import com.example.movieAppTask.util.Response
 
 interface ListMoviesRepository {
-    suspend fun getMoviesCategories(): CategoriesResponse
-    suspend fun getMoviesList(): MoviesResponse
+    suspend fun getMoviesCategories():Response<CategoriesResponse>
+    suspend fun getMoviesList():Response<MoviesResponse>
 }

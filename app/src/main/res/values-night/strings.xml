@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_fragment">Home</string>
+    <string name="details_fragment">Details</string>
+</resources>
